@@ -4,6 +4,8 @@ const mongoose = require('mongoose') // для підключення до Mongo
 
 const app = express() // наш серевер
 
+app.use('/api/auth', require('./routes/auth.routes'))
+
 const PORT = config.get('port') || 5000 // для отримання порту 
 
 async function start() {     // тому, що метод .connect повертає promise, обертаємо у функцію async/await
